@@ -9,91 +9,47 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <title>Agregar</title>
+    <title>Parcial 2</title>
   </head>
   <body>
     <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-        <div class="d-flex">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/">Inicio</a>
-          </div>
-          <div>
-            <a class="navbar-brand" href="/add">Agregar plato</a>
-          </div>
+      <div class="d-flex">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Inicio</a>
         </div>
-      </nav>
-    <div class="container pt-3">
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">ID</span>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="id"
-          id="input-id"
-          aria-label="id"
-          aria-describedby="basic-addon1"
-        />
+        <div>
+          <a class="navbar-brand" href="/add">Agregar plato</a>
+        </div>
       </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Nombre</span>
-        <input
-          type="text"
-          class="form-control"
-          id="input-name"
-          placeholder="Nombre"
-          aria-label="Nombre"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Calorias</span>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Calorias"
-          id="input-calories"
-          aria-label="Calorias"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">¿Es vegetariano?</span>
-        <select name="isVegetarian" id="select-vegetarian">
-            <option value="true">Sí</option>
-            <option value="false">No</option>
+    </nav>
+    <div class="container">
+      <div class="input-group mb-3 pt-3">
+        <span class="input-group-text" id="basic-addon1">Id para buscar</span>
+        <select name="" id="select-id" onchange="findById()">
+          <option value="Seleccione un ID" >Seleccione un ID</option>
         </select>
+        <button class="btn btn-dark" id="btn-reload" onclick="loadTable()">
+          Recargar la tabla
+        </button>
       </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Valor</span>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Valor"
-          id="input-value"
-          aria-label="Valor"
-          aria-describedby="basic-addon1"
-        />
+      <div class="table-responsive pt-3">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Calorías</th>
+              <th>¿Es vegetariano?</th>
+              <th>Valor</th>
+              <th>Comentarios</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
       </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Comentarios</span>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Comentarios"
-          id="input-comments"
-          aria-label="Comentarios"
-          aria-describedby="basic-addon1"
-        />
-      </div>
-
-      <button class="btn btn-primary" id="button-add" onclick="add()">
-        Enviar datos
-      </button>
     </div>
-    <script src="script-form.js"></script>
+    <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
